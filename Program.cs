@@ -8,8 +8,6 @@ namespace BankAppCA
 {
     class Program
     {
-       
-
         static void Main(string[] args)
         {
             //Declaration of Varialable
@@ -28,7 +26,14 @@ namespace BankAppCA
             Console.WriteLine("Enter Initial Balance deposited:");
             InitialBalance = Convert.ToInt32(Console.ReadLine());
 
+            if(InitialBalance > 1 && InitialBalance <= 1000)
+            {
+                Console.WriteLine("Initial Balance cannot be greate than 1000" + "You entered :" + InitialBalance);
+            }
+
             var account = new BankAccount(AccountHolderName, InitialBalance);
+
+
             Console.WriteLine($"Account {account.Number} was created for {account.Owner} with {account.Balance} balance.");
 
             account.MakeWithdrawal(500, DateTime.Now, "Fixed Deposit (Refundable on Account Close");

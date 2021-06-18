@@ -48,8 +48,11 @@
   <ItemGroup>
     <Compile Include="AbstractClassDemo.cs" />
     <Compile Include="BankAccount.cs" />
+    <Compile Include="BankAccountNew.cs" />
     <Compile Include="BasicDemo.cs" />
     <Compile Include="MultipleInheritanceDemo.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonsDetail.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultCalculator.cs" />
@@ -58,6 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LogicImplementation.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

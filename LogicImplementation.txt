@@ -1,0 +1,34 @@
+﻿
+Funtion 1 : BankAccount => Take AccounHolderName and INitial Balanace to create a new Account
+Function 2: Generate AccountNumber()
+FUnction 3: Check or Restrict Initial Balance Validation()
+Function 4: InitialDepositRecord()
+Function 5: GenerateAcountStatement()
+Function 6: SHow AccountStatementDatewise()
+FUnction 7: Show DataAboutUser()
+
+
+
+Now is PseudoCode pattern
+
+public function BankAccount(string AccountHolderName, decimal InitialBalance){
+
+//Logic to check Initial Balance
+//Call function to check Initial Balance
+CheckInitialBalance();
+
+if(ChecInitialBaance <= 0 }
+{
+ //Show Error Message "Initial Balance must be atleast Rs. 1. Tank YOu"
+
+showError(type Error, string Message)
+}
+
+18 Lines of Code
+
+}
+
+public function CheckInitialBalance(){
+
+//12 Lines of Codes
+}

@@ -28,11 +28,12 @@ namespace BankAppCA
 
         private static int accountNumberSeed() {
             //Use Random to generate to Random Numbers in a Pattern
-            Random rnd = new Random();
-            int randomNumber = rnd.Next(1000, 1100); ;
 
+            Random rnd = new Random();
+            int randomNumber = rnd.Next(1000, 1100);
             return randomNumber;
         }
+
         #region Constructor
         public BankAccount(string name, decimal initialBalance)
         {
@@ -51,16 +52,75 @@ namespace BankAppCA
         #region DepositAndWithdrawal
         public void MakeDeposit(decimal amount, DateTime date, string note)
         {
-            if (amount <= 0)
+            if (amount == 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(amount), "Amount cannot be 0. Please enter again.");
+            }
+            else if (amount <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of deposit must be positive");
             }
+
             var deposit = new Transaction(amount, date, note);
             allTransactions.Add(deposit);
         }
 
+        public string MakeTransaction(decimal amount, DateTime date, string note, string DepositType)
+        {
+            if(DepositType == "Deposit")
+            {
+                //Deposit Code
+
+            }
+
+            if (DepositType == "WithDraw")
+            {
+                //Withdraw Code
+
+            }
+
+            else { 
+                //Show Error Message
+                ShowMessage()
+            }
+        }
+
+
+        public string ShowMessage(string TransType, DateTime datetime, string note)
+        {
+
+            //type = "Error"
+
+            //type = "Validation"
+
+
+
+        }
+
+
+        //Polymorphism
+        //FunctionOverloading
+
+        //ShowErrorMessage(string TransType, DateTime datetime, string note) //3 Parameters
+        //ShowErrorMessage(int TransType, DateTime datetime) //2 Parameters, different types of Parameters
+        //ShowNoDataMessage(string TransType, DateTime datetime, string note)
+        //ShowValidationMessage(string TransType, DateTime datetime, string note)
+        //ShowLowBalanceMessage(string TransType, DateTime datetime, string note)
+
+
+
+
         public void MakeWithdrawal(decimal amount, DateTime date, string note)
         {
+            //Withdrawl = CurrentTotalBalance - CurrentAmount
+            //Deposit = CurrentTotalBalane + CurrentAmount
+
+            //Common in Both : Balance Amount, Note (Depostor, WithrawName
+
+            //Note = "Deposited by {Name} in {DateTime.Now()}
+            //Note = "Writhdraw by {Name} in {DateTime.Now()}
+
+
             if (amount <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(amount), "Amount of withdrawal must be positive");
